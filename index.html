@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PULSE MUSIC — Feel the rhythm. Live the moment.</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎵</text></svg>" />
+<base target="_blank">
+</head>
+<body>
+
+  <!-- ======= LOADING SCREEN ======= -->
+  <div class="loader" id="loader" aria-hidden="true">
+    <div class="loader-logo">♪</div>
+    <h1 class="loader-title">PULSE <span>MUSIC</span></h1>
+    <p class="loader-sub">Loading your music...</p>
+    <div class="loader-bar"><span></span></div>
+  </div>
+
+  <!-- ======= SIDEBAR ======= -->
+  <aside class="sidebar" id="sidebar" aria-label="Main navigation">
+    <div class="sidebar-header">
+      <a href="#" class="brand" data-nav="home">
+        <span class="brand-icon">♪</span>
+        <span class="brand-text">PULSE <b>MUSIC</b></span>
+      </a>
+      <button class="sidebar-close" id="sidebarClose" aria-label="Close menu">✕</button>
+    </div>
+
+    <nav class="sidebar-nav">
+      <p class="nav-label">Menu</p>
+      <a href="#" class="nav-link active" data-nav="home"><span class="nav-ico">🏠</span> Home</a>
+      <a href="#" class="nav-link" data-nav="discover"><span class="nav-ico">🧭</span> Discover</a>
+      <a href="#" class="nav-link" data-nav="library"><span class="nav-ico">📚</span> My Library</a>
+      <p class="nav-label">Music</p>
+      <a href="#" class="nav-link" data-nav="favorites"><span class="nav-ico">❤️</span> Favorites</a>
+      <a href="#" class="nav-link" data-nav="recent"><span class="nav-ico">🕒</span> Recently Played</a>
+      <a href="#" class="nav-link" data-nav="playlists"><span class="nav-ico">🎼</span> Playlists</a>
+      <a href="#" class="nav-link" data-nav="albums"><span class="nav-ico">💿</span> Albums</a>
+      <a href="#" class="nav-link" data-nav="artists"><span class="nav-ico">🎤</span> Artists</a>
+      <p class="nav-label">General</p>
+      <a href="#" class="nav-link" data-nav="settings"><span class="nav-ico">⚙️</span> Settings</a>
+    </nav>
+
+    <div class="sidebar-card">
+      <p>🎧 Go Premium</p>
+      <span>Ad-free music, offline mode & more.</span>
+      <button class="btn-gradient" id="premiumBtn">Upgrade</button>
+    </div>
+  </aside>
+  <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+  <!-- ======= MAIN WRAPPER ======= -->
+  <div class="main-wrapper">
+
+    <!-- ======= TOP NAV ======= -->
+    <header class="topnav">
+      <button class="hamburger" id="hamburger" aria-label="Open menu">☰</button>
+
+      <div class="search-box">
+        <span class="search-ico" aria-hidden="true">🔍</span>
+        <input type="search" id="searchInput" placeholder="Search songs, artists, albums, genres..."
+               aria-label="Search music" autocomplete="off" />
+        <button class="search-clear" id="searchClear" aria-label="Clear search">✕</button>
+      </div>
+
+      <div class="topnav-actions">
+        <button class="icon-btn" id="notifBtn" aria-label="Notifications">🔔<span class="notif-dot"></span></button>
+        <button class="icon-btn theme-toggle" id="themeToggle" aria-label="Toggle dark / light mode">🌙</button>
+        <div class="user-chip" title="Profile">
+          <span class="user-avatar">P</span>
+          <span class="user-name">Pulse User</span>
+        </div>
+      </div>
+    </header>
+
+    <!-- ======= MAIN CONTENT ======= -->
+    <main class="content" id="content">
+
+      <!-- ======= HOME VIEW ======= -->
+      <section class="view active" id="view-home">
+
+        <!-- HERO -->
+        <section class="hero">
+          <div class="hero-text">
+            <span class="hero-badge">♪ #1 Music Experience</span>
+            <h1>Welcome to <span class="gradient-text">Pulse Music</span></h1>
+            <p>Discover your favorite music and enjoy every beat.</p>
+            <div class="hero-btns">
+              <button class="btn-gradient" id="exploreBtn">🎵 Explore Music</button>
+              <button class="btn-ghost" id="startBtn">▶ Start Listening</button>
+            </div>
+          </div>
+          <div class="hero-visual" aria-hidden="true">
+            <div class="disc disc-1">♪</div>
+            <div class="disc disc-2">♫</div>
+            <div class="disc disc-3">🎧</div>
+          </div>
+        </section>
+
+        <!-- STATS -->
+        <section class="stats" aria-label="Statistics">
+          <div class="stat-card"><span class="stat-ico">🎵</span><div><h3 id="statSongs">0</h3><p>Total Songs</p></div></div>
+          <div class="stat-card"><span class="stat-ico">🎤</span><div><h3 id="statArtists">0</h3><p>Artists</p></div></div>
+          <div class="stat-card"><span class="stat-ico">💿</span><div><h3 id="statAlbums">0</h3><p>Albums</p></div></div>
+          <div class="stat-card"><span class="stat-ico">❤️</span><div><h3 id="statFavs">0</h3><p>Favorites</p></div></div>
+        </section>
+
+        <!-- FEATURED -->
+        <section class="section" id="featuredSection">
+          <div class="section-head">
+            <h2>🎧 Featured Music</h2>
+            <button class="link-btn" data-nav="discover">See all →</button>
+          </div>
+          <div class="card-grid" id="featuredGrid"></div>
+        </section>
+
+        <!-- TRENDING -->
+        <section class="section">
+          <div class="section-head"><h2>🔥 Trending Now</h2></div>
+          <div class="trend-list" id="trendingList"></div>
+        </section>
+
+        <!-- ARTISTS -->
+        <section class="section">
+          <div class="section-head"><h2>🎤 Popular Artists</h2></div>
+          <div class="artist-row" id="artistRow"></div>
+        </section>
+
+        <!-- ALBUMS -->
+        <section class="section">
+          <div class="section-head"><h2>💿 Popular Albums</h2></div>
+          <div class="card-grid" id="albumGrid"></div>
+        </section>
+
+        <!-- GENRES -->
+        <section class="section">
+          <div class="section-head"><h2>🎼 Browse by Genre</h2></div>
+          <div class="genre-grid" id="genreGrid"></div>
+        </section>
+
+        <!-- RECENTLY PLAYED -->
+        <section class="section">
+          <div class="section-head">
+            <h2>🕒 Recently Played</h2>
+            <button class="link-btn" data-nav="recent">See all →</button>
+          </div>
+          <div class="song-table" id="recentPreview"></div>
+        </section>
+      </section>
+
+      <!-- ======= DISCOVER VIEW (all songs) ======= -->
+      <section class="view" id="view-discover">
+        <div class="view-head">
+          <h2>🧭 Discover</h2>
+          <p>Every song in the Pulse library.</p>
+        </div>
+        <div class="song-table" id="allSongsList"></div>
+      </section>
+
+      <!-- ======= LIBRARY VIEW ======= -->
+      <section class="view" id="view-library">
+        <div class="view-head"><h2>📚 My Library</h2><p>Your playlists, favorites and history in one place.</p></div>
+        <div class="library-cards">
+          <button class="lib-card" data-nav="favorites"><span>❤️</span> Favorites <b id="libFavCount">0</b></button>
+          <button class="lib-card" data-nav="recent"><span>🕒</span> Recently Played <b id="libRecentCount">0</b></button>
+          <button class="lib-card" data-nav="playlists"><span>🎼</span> Playlists <b id="libPlCount">0</b></button>
+        </div>
+      </section>
+
+      <!-- ======= FAVORITES VIEW ======= -->
+      <section class="view" id="view-favorites">
+        <div class="view-head">
+          <h2>❤️ My Favorites</h2>
+          <p id="favCountLabel">0 songs</p>
+        </div>
+        <div class="song-table" id="favoritesList"></div>
+        <p class="empty-msg" id="favEmpty">No favorites yet. Tap the ♡ on any song!</p>
+      </section>
+
+      <!-- ======= RECENT VIEW ======= -->
+      <section class="view" id="view-recent">
+        <div class="view-head">
+          <h2>🕒 Recently Played</h2>
+          <button class="btn-ghost small danger" id="clearRecentBtn">Clear history</button>
+        </div>
+        <div class="song-table" id="recentList"></div>
+        <p class="empty-msg" id="recentEmpty">Nothing played yet — press play and make some noise!</p>
+      </section>
+
+      <!-- ======= PLAYLISTS VIEW ======= -->
+      <section class="view" id="view-playlists">
+        <div class="view-head">
+          <h2>🎼 My Playlists</h2>
+          <button class="btn-gradient small" id="newPlaylistBtn">＋ New Playlist</button>
+        </div>
+        <div class="card-grid" id="playlistGrid"></div>
+      </section>
+
+      <!-- ======= PLAYLIST DETAIL VIEW ======= -->
+      <section class="view" id="view-playlistDetail">
+        <div class="view-head">
+          <button class="link-btn" data-nav="playlists">← Back</button>
+          <h2 id="plDetailTitle">Playlist</h2>
+          <p id="plDetailMeta"></p>
+        </div>
+        <div class="song-table" id="playlistSongsList"></div>
+        <p class="empty-msg" id="plDetailEmpty">This playlist is empty. Open a song's ⋯ menu and choose "Add to Playlist".</p>
+      </section>
+
+      <!-- ======= ALBUMS VIEW ======= -->
+      <section class="view" id="view-albums">
+        <div class="view-head"><h2>💿 Albums</h2></div>
+        <div class="card-grid" id="albumsViewGrid"></div>
+      </section>
+
+      <!-- ======= ARTISTS VIEW ======= -->
+      <section class="view" id="view-artists">
+        <div class="view-head"><h2>🎤 Artists</h2></div>
+        <div class="artist-row" id="artistsViewRow"></div>
+      </section>
+
+      <!-- ======= SETTINGS VIEW ======= -->
+      <section class="view" id="view-settings">
+        <div class="view-head"><h2>⚙️ Settings</h2></div>
+        <div class="settings-panel">
+          <div class="setting-row">
+            <div><b>Theme</b><p>Switch between dark and light mode.</p></div>
+            <button class="btn-ghost small" id="themeToggle2">🌙 Dark / ☀️ Light</button>
+          </div>
+          <div class="setting-row">
+            <div><b>Volume</b><p>Default playback volume.</p></div>
+            <input type="range" id="settingsVolume" min="0" max="100" value="80" aria-label="Default volume" />
+          </div>
+          <div class="setting-row">
+            <div><b>Reset data</b><p>Clear favorites, history and playlists stored in this browser.</p></div>
+            <button class="btn-ghost small danger" id="resetDataBtn">Reset</button>
+          </div>
+        </div>
+      </section>
+
+      <!-- ======= BROWSE VIEW (artist / album / genre results) ======= -->
+      <section class="view" id="view-browse">
+        <div class="view-head">
+          <button class="link-btn" data-nav="home">← Back</button>
+          <h2 id="browseTitle">Results</h2>
+          <p id="browseMeta"></p>
+        </div>
+        <div class="song-table" id="browseList"></div>
+        <p class="empty-msg" id="browseEmpty">No music found.</p>
+      </section>
+
+      <!-- ======= SEARCH RESULTS VIEW ======= -->
+      <section class="view" id="view-search">
+        <div class="view-head"><h2 id="searchTitle">🔍 Search results</h2><p id="searchMeta"></p></div>
+        <div class="song-table" id="searchResults"></div>
+        <p class="empty-msg" id="searchEmpty">No music found.</p>
+      </section>
+
+      <!-- ======= FOOTER ======= -->
+      <footer class="footer">
+        <div class="footer-brand">
+          <span class="brand-icon">♪</span>
+          <div>
+            <b>PULSE MUSIC</b>
+            <p>Feel the rhythm. Live the moment.</p>
+          </div>
+        </div>
+        <div class="footer-links">
+          <a href="#">About</a><a href="#">Privacy</a><a href="#">Terms</a><a href="#">Contact</a>
+        </div>
+        <div class="footer-social">
+          <a href="#" aria-label="Facebook">📘</a>
+          <a href="#" aria-label="Instagram">📸</a>
+          <a href="#" aria-label="YouTube">▶️</a>
+          <a href="#" aria-label="GitHub">🐙</a>
+        </div>
+        <p class="footer-copy">© 2025 Pulse Music. All rights reserved.</p>
+      </footer>
+    </main>
+  </div>
+
+  <!-- ======= QUEUE PANEL ======= -->
+  <aside class="queue-panel" id="queuePanel" aria-label="Up next queue">
+    <div class="queue-head">
+      <h3>🎶 Up Next</h3>
+      <div>
+        <button class="icon-btn small" id="clearQueueBtn" aria-label="Clear queue">🗑</button>
+        <button class="icon-btn small" id="closeQueueBtn" aria-label="Close queue">✕</button>
+      </div>
+    </div>
+    <div class="queue-list" id="queueList"></div>
+  </aside>
+
+  <!-- ======= SONG MODAL ======= -->
+  <div class="modal-backdrop" id="songModal">
+    <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+      <button class="modal-close" id="modalClose" aria-label="Close">✕</button>
+      <div class="modal-body" id="modalBody"></div>
+    </div>
+  </div>
+
+  <!-- ======= PLAYLIST PICKER MODAL ======= -->
+  <div class="modal-backdrop" id="playlistPicker">
+    <div class="modal small" role="dialog" aria-modal="true">
+      <button class="modal-close" id="pickerClose" aria-label="Close">✕</button>
+      <h3>🎼 Add to Playlist</h3>
+      <div id="pickerList"></div>
+    </div>
+  </div>
+
+  <!-- ======= TOAST ======= -->
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <!-- ======= MUSIC PLAYER BAR ======= -->
+  <footer class="player" id="player" aria-label="Music player">
+    <audio id="audio" preload="metadata"></audio>
+
+    <!-- Left: song info -->
+    <div class="player-left">
+      <img src="" alt="Current song cover" id="pCover" class="p-cover" />
+      <div class="p-info">
+        <b id="pTitle">—</b>
+        <span id="pArtist">—</span>
+      </div>
+      <button class="icon-btn" id="pFavBtn" aria-label="Toggle favorite">♡</button>
+    </div>
+
+    <!-- Center: controls + progress -->
+    <div class="player-center">
+      <div class="p-controls">
+        <button class="icon-btn" id="shuffleBtn" aria-label="Shuffle" title="Shuffle">🔀</button>
+        <button class="icon-btn" id="prevBtn" aria-label="Previous song" title="Previous">⏮</button>
+        <button class="play-btn" id="playBtn" aria-label="Play or pause" title="Play / Pause">▶</button>
+        <button class="icon-btn" id="nextBtn" aria-label="Next song" title="Next">⏭</button>
+        <button class="icon-btn" id="repeatBtn" aria-label="Repeat mode" title="Repeat">🔁</button>
+      </div>
+      <div class="p-progress">
+        <span id="curTime">00:00</span>
+        <div class="progress-track" id="progressTrack" role="slider" aria-label="Seek" tabindex="0">
+          <div class="progress-fill" id="progressFill"></div>
+          <div class="progress-thumb" id="progressThumb"></div>
+        </div>
+        <span id="durTime">00:00</span>
+      </div>
+    </div>
+
+    <!-- Right: volume + queue -->
+    <div class="player-right">
+      <button class="icon-btn" id="queueBtn" aria-label="Open queue" title="Queue">☰🎵</button>
+      <button class="icon-btn" id="muteBtn" aria-label="Mute or unmute" title="Mute">🔊</button>
+      <input type="range" id="volumeSlider" min="0" max="100" value="80" aria-label="Volume" />
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
