@@ -6,16 +6,16 @@
 
 /* ==================== SONG DATABASE ==================== */
 const songs = [
-  { id: 1, title: "Api Aye Hamuwela", artist: "Uvindu Ayshcharya", album: "Api Aye Hamuwela", genre: "Sinhala", year: 2026, duration: "3:50", image: "api_aye_hamuwela.jpeg", audio: "api_aye_hamuwela.mpeg" },
-  { id: 2, title: "Atha Arala Dala", artist: "Lil Rome Praba", album: "Atha Arala Dala", genre: "Sinhala", year: 2026, duration: "5:05", image: "/atha_arala_dala.jpeg", audio: "atha_arala_dala.mpeg" },
-  { id: 3, title: "Pattampoochi", artist: "G.V. Prakash Kumar / Sublahshini", album: "Vishwanath & Son", genre: "Tamil", year: 2026, duration: "3:25", image: "pattampoochi_tamil.jpeg", audio: "pottampoochi_tamil.mpeg" },
-  { id: 4, title: "Kannumuzhi", artist: "Anthony Daasan / Sublahshini", album: "Mask", genre: "Tamil", year: 2025, duration: "3:49", image: "kannumuzhi_tamil.jpeg", audio: "kannumuzhi_tamil.mpeg" },
-  { id: 5, title: "Saiyaara", artist: "Faheem Abdullah", album: "Saiyaara", genre: "Hindi", year: 2025, duration: "4:06", image: "saiyaara_hindi.jpeg", audio: "saiyaara_hindi.mpeg" },
-  { id: 6, title: "Ashiqui", artist: "Arijit Singh", album: "Ashiqui 2", genre: "Hindi", year: 2013, duration: "5:04", image: "ashiqui_hindi.jpeg", audio: "ashiqui_hindi.mpeg" },
-  { id: 7, title: "Dynamite", artist: "BTS", album: "Featured on the albums BE", genre: "Disco-Pop", year: 2020, duration: "3:17", image: "dynamite_bts.jpeg", audio: "dynamite_bts.mpeg" },
-  { id: 8, title: "Swim", artist: "BTS", album: "K-Pop", genre: "A laid-back Lo-Fi R&B-Pop synth", year: 2026, duration: "2:44", image: "swim_bts.jpeg", audio: "swim_bts.mpeg" },
-  { id: 9, title: "Morrocco", artist: "Joshua Baraka & Axon", album: "Morocco", genre: "Afro-Pop", year: 2025, duration: "3:09", image: "morrocco_english.jpeg", audio: "morocco _2026_english.mpeg" },
-  { id: 10, title: "The Lover's Litacy", artist: "Rudyard Kipling", album: "The Lover's Litacy", genre: "Synth-Pop", year: 2000, duration: "4:41", image: "the_lover's_litacy_english.jpeg", audio: "the_lover's_litany_english.mpeg" },
+  { id: 1, title: "Api Aye Hamuwela", artist: "Uvindu Ayshcharya", album: "Api Aye Hamuwela", genre: "Sinhala", year: 2026, duration: "3:50", image: "images/api_aye_hamuwela.jpeg", audio: "songs/api_aye_hamuwela.mpeg" },
+  { id: 2, title: "Atha Arala Dala", artist: "Lil Rome Praba", album: "Atha Arala Dala", genre: "Sinhala", year: 2026, duration: "5:05", image: "images/atha_arala_dala.jpeg", audio: "songs/atha_arala_dala.mpeg" },
+  { id: 3, title: "Pattampoochi", artist: "G.V. Prakash Kumar / Sublahshini", album: "Vishwanath & Son", genre: "Tamil", year: 2026, duration: "3:25", image: "images/pattampoochi_tamil.jpeg", audio: "songs/pottampoochi_tamil.mpeg" },
+  { id: 4, title: "Kannumuzhi", artist: "Anthony Daasan / Sublahshini", album: "Mask", genre: "Tamil", year: 2025, duration: "3:49", image: "images/kannumuzhi_tamil.jpeg", audio: "songs/kannumuzhi_tamil.mpeg" },
+  { id: 5, title: "Saiyaara", artist: "Faheem Abdullah", album: "Saiyaara", genre: "Hindi", year: 2025, duration: "4:06", image: "images/saiyaara_hindi.jpeg", audio: "songs/saiyaara_hindi.mpeg" },
+  { id: 6, title: "Ashiqui", artist: "Arijit Singh", album: "Ashiqui 2", genre: "Hindi", year: 2013, duration: "5:04", image: "images/ashiqui_hindi.jpeg", audio: "songs/ashiqui_hindi.mpeg" },
+  { id: 7, title: "Dynamite", artist: "BTS", album: "Featured on the albums BE", genre: "Disco-Pop", year: 2020, duration: "3:17", image: "images/dynamite_bts.jpeg", audio: "songs/dynamite_bts.mpeg" },
+  { id: 8, title: "Swim", artist: "BTS", album: "K-Pop", genre: "A laid-back Lo-Fi R&B-Pop synth", year: 2026, duration: "2:44", image: "images/swim_bts.jpeg", audio: "songs/swim_bts.mpeg" },
+  { id: 9, title: "Morrocco", artist: "Joshua Baraka & Axon", album: "Morocco", genre: "Afro-Pop", year: 2025, duration: "3:09", image: "images/morrocco_english.jpeg", audio: "songs/morocco _2026_english.mpeg" },
+  { id: 10, title: "The Lover's Litacy", artist: "Rudyard Kipling", album: "The Lover's Litacy", genre: "Synth-Pop", year: 2000, duration: "4:41", image: "images/the_lover's_litacy_english.jpeg", audio: "songs/the_lover's_litany_english.mpeg" },
  
 ];
 
